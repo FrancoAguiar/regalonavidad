@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un regalo para diseñadores valientes — necesitodiseños</title>
+    
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nd: {
+                            orange: '#FF3C00', // El naranja vibrante de ND
+                            black: '#000000',
+                            gray: '#1A1A1A'
+                        },
+                        luxury: {
+                            gold: '#C5A065',
+                            red: '#B93632',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    fontFamily2: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 30px 60px -12px rgba(255, 60, 0, 0.2)',
+                        'card': '0 50px 100px -20px rgba(0, 0, 0, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: #000;
+            scroll-behavior: smooth;
+        }
+        
+        .texture-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.06; pointer-events: none; z-index: 100;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .fade-in{
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  filter: blur(14px);
+  transition: opacity .75s cubic-bezier(.22,1,.36,1),
+              transform .75s cubic-bezier(.22,1,.36,1),
+              filter .75s cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform, filter;
+}
+
+.fade-in.visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tracking-nd {
+            letter-spacing: -0.05em;
+        }
+
+        .btn-nd {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-nd:hover {
+            transform: scale(1.05) translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-sans text-white bg-black selection:bg-nd-orange selection:text-white">
+
+    <div class="texture-overlay"></div>
+
+    <!-- BACKGROUND FIXED -->
+    <div class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('https://sandiprojects.com/wp-content/uploads/2025/12/upscalemedia-transformed-3-scaled.png');">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-[4px]"></div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="relative z-10 w-full flex flex-col items-center py-16 px-4">
+        
+        <!-- 1. HERO SECTION ND STYLE -->
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center w-full mb-16">
+            <div class="w-full max-w-4xl text-center fade-in visible">
+                <p class="text-[10px] md:text-xs font-black uppercase mb-6 tracking-[0.4em] text-nd-orange animate-pulse">
+                    NAVIDAD PARA DISEÑADORES
+                </p>
+
+                <h1 class="font-black tracking-nd mb-8 leading-[1] text-white" 
+                    style="font-size: clamp(2.5rem, 8vw, 5.5rem);">
+                    TU REGALO SORPRESA <br>
+                    <span class="font-serif italic font-light text-white/90">version diseñadores.</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-white-300 max-w-2xl mx-auto mb-6 font-light leading-relaxed">
+                    Por <span class="text-white font-bold">$1 USD</span> accedes a tu propio regalo a ciegas.<br/><br/>
+Y lo abrís como corresponde:<br/> <span class="text-white font-bold">En Navidad, a las 00:00, directo en tu mail.</span>
+                </p>
+
+                <p class="text-lg text-gray-400 max-w-xl mx-auto mb-12 font-medium">
+                    Lo vas a recibir el <span class="text-nd-orange font-bold">24/12 a las 00:00</span>. <br>
+                   No sabés qué es... descubrelo cuando llegue
+                </p>
+
+                <a href="#comprar" 
+                   class="btn-nd inline-flex items-center justify-center px-10 py-5 text-xl font-black rounded-[2rem] text-white bg-nd-orange shadow-premium">
+                    QUIERO MI REGALO 🎁
+                </a>
+
+                <p class="text-[10px] text-orange-600 mt-8 uppercase tracking-[0.3em] font-bold">
+                    Disponible por tiempo limitado.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. ¿POR QUÉ EXISTE? (ND Card) -->
+        <section class="w-full max-w-2xl bg-nd-gray/60 backdrop-blur-2xl p-10 md:p-16 rounded-[2rem] shadow-card text-center border border-white/10 mb-12 fade-in">
+            <h2 class="font-black text-3xl md:text-4xl mb-8 tracking-nd uppercase text-left">¿POR QUE LO HACEMOS?</h2>
+            <div class="text-gray-200 text-xl md:text-2xl font-light leading-snug space-y-6 tracking-nd">
+                <p>Porque este año acompañamos a miles de diseñadores a empezar, crecer o escalar.</p>
+                <p>Porque emprender en soledad no es fácil.</p>
+                <p>Y porque queríamos cerrar el año con algo simbólico, real y hecho con intención.</p>
+                <p class="font-serif italic text-white text-3xl pt-4">Es un regalo. Pensado para vos.</p>
+            </div>
+        </section>
+
+        <!-- 3. ¿QUÉ ESTÁS COMPRANDO? (White Card for contrast) -->
+        <section class="w-full max-w-2xl bg-white p-10 md:p-16 rounded-[2rem] shadow-card text-black mb-12 fade-in">
+          <h2 class="font-black text-3xl md:text-4xl mb-8 tracking-nd uppercase text-left">¿Qué estás comprando?</h2>
+            <p class="text-gray-600 mb-10 text-lg">No sabés qué es. <br/> Y eso es parte de la experiencia. <br>Pero esto sí lo sabés:</p>
+            <ul class="space-y-5 text-left max-w-sm mx-auto font-medium">
+                <li class="flex items-center"><span class="text-nd-orange mr-4 font-black">→</span> Es digital</li>
+                <li class="flex items-center"><span class="text-nd-orange mr-4 font-black">→</span> Llega el 24/12 a las 00:00</li>
+                <li class="flex items-center"><span class="text-nd-orange mr-4 font-black">→</span> Cuesta solo $1</li>
+                <li class="flex items-center"><span class="text-nd-orange mr-4 font-black">→</span> No estará disponible después</li>
+                <li class="flex items-center"><span class="text-nd-orange mr-4 font-black">→</span> Valor real: mucho más...</li>
+            </ul>
+        </section>
+
+        <!-- 4. ¿POR QUÉ $1? -->
+        <section class="w-full max-w-2xl bg-nd-orange p-10 md:p-16 rounded-[2rem] shadow-card text-center text-white mb-12 fade-in">
+            <h2 class="font-black text-3xl md:text-4xl mb-8 tracking-nd uppercase text-left">¿POR QUE $1 USD?</h2>
+            <p class="text-white/90 text-xl font-light leading-relaxed">
+                Porque lo que no se paga, no se valora. <br><br>
+                No es por el dinero. Es por el compromiso. Es lo suficiente para que no lo dejes olvidado en descargas.
+            </p>
+        </section>
+
+        <!-- 5. ¿ES PARA VOS? (Black Card) -->
+        <section class="w-full max-w-2xl bg-black/80 backdrop-blur-xl p-10 md:p-16 rounded-[2rem] shadow-card border border-nd-orange/20 mb-12 fade-in text-center">
+            <h2 class="font-black text-3xl md:text-4xl mb-8 tracking-nd uppercase text-left">ES PARA VOS SI...</h2>
+            <div class="grid gap-4">
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-gray-300 italic font-light">“Querés arrancar 2026 con dirección”</div>
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-gray-300 italic font-light">“Te sentiste solo/a en el camino freelance.”</div>
+                <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-gray-300 italic font-light">“No queres cerrar el año igual que como lo empezaste”</div>
+            </div>
+        </section>
+
+        <!-- 6. CTA FINAL -->
+        <section class="w-full max-w-3xl text-center py-20 fade-in" id="comprar">
+            <h2 class="font-black text-5xl md:text-7xl mb-10 tracking-nd leading-none">
+                ¿Te lo vas a <span class="text-nd-orange">regalar?</span>
+            </h2>
+            <p class="text-white-400 text-xl mb-12 max-w-md mx-auto font-light">Si llegaste hasta acá, este regalo es para vos. Cerrá el año con intención.</p>
+            
+            <a href="#comprar" 
+                   class="btn-nd inline-flex items-center justify-center px-10 py-5 text-xl font-black rounded-[2rem] text-white bg-nd-orange shadow-premium">
+                    QUIERO MI REGALO 🎁
+                </a>
+            
+            <p class="mt-10 text-nd-orange/60 font-black text-xs tracking-[0.4em] uppercase">
+                SOLO HASTA EL 25/12
+            </p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-full text-center pb-12 opacity-40">
+            <p class="text-[10px] font-black tracking-[0.2rem]">© 2025 | @necesitodisenos</p>
+        </footer>
+
+    </main>
+
+    <script>
+      const observerOptions = { threshold: 0.12 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // opcional
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        
+    </script>
+</body>
+</html>
